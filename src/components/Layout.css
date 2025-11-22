@@ -1,0 +1,143 @@
+/* Light Theme (default) */
+:root {
+  --topbar-bg: #ffffff;
+  --sidebar-bg: #f4f4f4;
+  --content-bg: #fafafa;
+  --text-color: #222;
+  --btn-bg: #e1e1e1;
+  --hover-bg: #dcdcdc;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --topbar-bg: #1f1f1f;
+  --sidebar-bg: #2a2a2a;
+  --content-bg: #181818;
+  --text-color: #f5f5f5;
+  --btn-bg: #333;
+  --hover-bg: #444;
+  background: #121212;
+}
+/* Layout wrapper */
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ---------------- TOPBAR ---------------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--topbar-bg);
+  padding: 12px 16px;
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.menu-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none; /* Hidden on desktop */
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 10px;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: var(--sidebar-bg);
+  padding: 20px;
+  transition: 0.3s ease;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-color);
+  align-self: flex-end;
+}
+
+/* Sidebar nav buttons */
+.sidebar nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-btn {
+  padding: 12px 10px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  border: none;
+  text-align: left;
+  background: none;
+  color: var(--text-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+.nav-btn:hover {
+  background: var(--hover-bg);
+}
+
+.logout {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+.content {
+  flex: 1;
+  padding: 20px;
+  transition: filter 0.3s ease;
+}
+
+/* Blur effect when sidebar is open */
+.content-blur {
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+}
