@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login } from "../services/api"; // make sure your API call exists
+import { login } from "../services/api";
 import { useToast } from "./ToastProvider";
 
 const Login = ({ onLogin }) => {
